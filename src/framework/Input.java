@@ -1,5 +1,8 @@
 package framework;
 
+import framework.dispatcher.DispatcherTopic;
+import generic.data.Security;
+
 public interface Input {
 
 	/**
@@ -31,7 +34,7 @@ public interface Input {
 	/**
 	 * return the DispatcherTopic for update event
 	 */
-	public void updateTopic();
+	public DispatcherTopic updateTopic();
 	
 	/**
 	 * Return a immutable and fully thread safe Snapshot object
@@ -39,4 +42,9 @@ public interface Input {
 	 */
 	public Snapshot snapshot();
 	 
+	/**
+	 * return the Security object which this input is about
+	 * @return
+	 */
+	public Security ticker();
 }
